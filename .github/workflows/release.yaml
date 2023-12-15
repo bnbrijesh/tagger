@@ -18,4 +18,4 @@ jobs:
         env:
           RELEASE_BRANCHES: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          INITIAL_VERSION: 0.6
+          INITIAL_VERSION: 0.6.0
