@@ -1,0 +1,21 @@
+name: create new release
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+    merged: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.647.0
+        env:
+          RELEASE_BRANCHES: master
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INITIAL_VERSION: 0.6
